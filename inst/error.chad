@@ -1,0 +1,6 @@
+-- #Error testing
+-- f <- function(x) stopifnot("yo mama" == x)
+-- g <- function(x) f(x)
+-- h <- function() g(22)
+-- h()
+<simpleError: "yo mama" == x is not TRUE>

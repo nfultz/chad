@@ -10,3 +10,5 @@ Imports: stringr
 License: GPL-3
 Copyright: Zestfinance Inc 2015
 URL: http://www.github.com/nfultz/chad
+Suggests: devtools, 
+          tron

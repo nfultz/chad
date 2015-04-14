@@ -17,7 +17,7 @@ processFile <- function(IN=stdin(), OUT=stdout()) {
     lines <- grep("^[>+]", lines, value=TRUE)
 
     index <- cumsum(grepl(lines, pattern="^>"))
-    lines <- na.omit(str_extract(lines, perl("(?<=^[>+]).*?(?=\\s*$)")))
+    lines <- na.omit(regmatches(lines, regexpr("(?<=^[>+]).*?(?=\\s*$)", lines, perl=TRUE)))
   
     # Final line in a block will not end in a {
     split(lines, index)

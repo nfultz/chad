@@ -1,7 +1,7 @@
 #' Chad a file
 #' 
 #' @section Options:
-#' \code{chad.color} - if set to TRUE, pipe the diff through \code{colorout}
+#' \code{chad.diff} - the diff program to use, defaulting to \code{diff -u}
 #' 
 #' @param file.name  path to a chad script
 #' @param ask        if there is a failure, prompt the user to accept as golden

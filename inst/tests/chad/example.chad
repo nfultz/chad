@@ -1,7 +1,7 @@
---# Example.chad
---# by NJF
---data(sleep)
---print(sleep)
+># Example.chad
+># by NJF
+>data(sleep)
+>print(sleep)
    extra group ID
 1    0.7     1  1
 2   -1.6     1  2

@@ -1,13 +1,12 @@
--- # multiline chadscript test
--- # below is fugly but syntacticly valid R
--- print("before block")
+> # multiline chadscript test
+> print("before block")
 [1] "before block"
--- if(FALSE) {{
---   stop("Should never get here") };{
---   stop("or here") };{
--- }} else {{
---   print("booyah") };{
--- }}
+> if(FALSE) {
++   stop("Should never get here")
++   stop("or here")
++ } else {
++   print("booyah")
++ }
 [1] "booyah"
--- print("after block") # test following block
+> print("after block") # test following block
 [1] "after block"

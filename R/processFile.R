@@ -14,28 +14,25 @@ processFile <- function(IN=stdin(), OUT=stdout()) {
     # the regex below should match lines that begin with --, 
     # and extract the command without trailing space
     lines <- readLines(IN, warn=FALSE)
-    lines <- na.omit(str_extract(lines, perl("(?<=^--).*?(?=\\s*$)")))
+    lines <- grep("^[>+]", lines, value=TRUE)
+
+    index <- cumsum(grepl(lines, pattern="^>"))
+    lines <- na.omit(str_extract(lines, perl("(?<=^[>+]).*?(?=\\s*$)")))
   
     # Final line in a block will not end in a {
-    index <- grep(lines, pattern="[{]$", invert=TRUE)
-    ret <- list()
-    first <- 1
-    for(last in index) {
-      ret <- c(ret, list(lines[first:last]))
-      first <- last + 1
-    }
-    ret
+    split(lines, index)
   })
   
   
 
 
   e <- new.env(parent=.GlobalEnv)
+  prefix <- `[<-`(rep("+", 100), 1, ">")
   
   # A primitive read-eval-print loop
   tryCatch(error=print,
     for(block in blocks) {
-      cat(paste0('--', block, '\n'), sep="")
+      cat(paste0(head(prefix, length(block)), block), sep="\n")
       eval(parse(text=block), e)
     }  
   )

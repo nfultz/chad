@@ -1,7 +1,7 @@
--- # Meta-chad
--- require(chad)
--- tests <- chadRecur()
--- print(transform(tests, time=time < .015))
+> # Meta-chad
+> require(chad)
+> tests <- chadRecur()
+> print(transform(tests, time=time < .015))
                   file status  time
 1           error.chad      1  TRUE
 2         example.chad      0 FALSE

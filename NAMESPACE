@@ -2,4 +2,4 @@
 
 export(chad)
 export(chadRecur)
-import(stringr)
+export(equipChad)

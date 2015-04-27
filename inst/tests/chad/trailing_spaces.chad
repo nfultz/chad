@@ -1,3 +1,4 @@
 > # test trailing spaces     
+>            
 > # above line has trailing spaces
 > # expect a failure with diff

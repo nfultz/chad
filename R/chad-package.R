@@ -10,7 +10,6 @@
 #' @name chad-package
 #' @author Neal Fultz
 #' @seealso chad
-#' @import stringr
 #' @docType package
 #' @references \url{http://en.wikipedia.org/wiki/Acceptance_testing}
 NULL

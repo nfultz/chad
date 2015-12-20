@@ -3,6 +3,7 @@ systemf <- function(fmt, ..., ignore.stdout=FALSE)
   system(sprintf(fmt, ...), ignore.stdout=ignore.stdout)
 
 # Run a single chad script from inconn and write to outconn
+#' @importFrom methods show
 processFile <- function(IN=stdin(), OUT=stdout()) {
 
   if(OUT != stdout()) {

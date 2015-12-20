@@ -1,13 +1,15 @@
 Package: chad
 Type: Package
-Title: A lightweight acceptance test framework
-Version: 1.1
-Date: 2015-04-15
+Title: A Lightweight Acceptance Test Framework
+Version: 1.3
+Date: 2015-12-20
 Author: Neal Fultz
-Maintainer: Neal Fultz <njf@zestfinance.com>
-Description: This provides a framework for scripting acceptance tests.
+Maintainer: Neal Fultz <nfultz@gmail.com>
+Description: A framework for scripting acceptance tests.
 License: GPL-3
-Copyright: Zestfinance Inc 2015
+Copyright: Zestfinance Inc 2015; changes after July 2015 Copyright Neal Fultz
 URL: http://www.github.com/nfultz/chad
-Suggests: devtools, 
-          tron
+Imports: methods
+Suggests:
+    devtools
+RoxygenNote: 5.0.1

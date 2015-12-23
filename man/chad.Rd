@@ -4,14 +4,19 @@
 \alias{chad}
 \title{Chad a file}
 \usage{
-chad(file.name, ask = interactive(), quiet = !ask)
+chad(file.name, ask = interactive(), quiet.log = !ask, msg = TRUE,
+  echo = FALSE)
 }
 \arguments{
 \item{file.name}{path to a chad script}
 
 \item{ask}{if there is a failure, prompt the user to accept as golden}
 
-\item{quiet}{suppress logging messages}
+\item{quiet.log}{suppress logging messages}
+
+\item{msg}{also log std. err.}
+
+\item{echo}{echo chadscript to screen as it's run -- note: messages cannot be echo'ed.}
 }
 \description{
 Chad a file

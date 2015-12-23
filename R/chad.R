@@ -5,11 +5,13 @@
 #' 
 #' @param file.name  path to a chad script
 #' @param ask        if there is a failure, prompt the user to accept as golden
-#' @param quiet      suppress logging messages
+#' @param quiet.log  suppress logging messages
+#' @param msg        also log std. err.
+#' @param echo       echo chadscript to screen as it's run -- note: messages cannot be echo'ed.   
 #'
 #' @export
-chad <- function(file.name, ask=interactive(), quiet=!ask) {
-  message2 <- function(...) if(!quiet) message(...)
+chad <- function(file.name, ask=interactive(), quiet.log=!ask, msg=TRUE, echo=FALSE) {
+  message2 <- function(...) if(!quiet.log) message(...)
   
   
   old <- setwd(dirname(normalizePath(file.name)))
@@ -19,7 +21,7 @@ chad <- function(file.name, ask=interactive(), quiet=!ask) {
   
   message2("Chadding\t", file.name, "\t...\t", appendLF = ask)
   out.file <- paste0(file.name, ".out")
-  processFile(file.name, out.file) 
+  processFile(file.name, out.file, msg, echo) 
   d <- diffFiles(file.name, out.file, ask)
   if(d != 0L) {
     if(ask) {

@@ -46,7 +46,7 @@ summary.chadResults <- function(object, ...){
       tests = tests[tests$status != 0, ],
       x = sum(tests$status == 0),
       n = nrow(tests),
-      time = ceiling(difftime(attr(object, "finish.time"), attr(object, "start.time"), "minutes")),
+      time = ceiling(difftime(attr(object, "finish.time"), attr(object, "start.time"))),
       call = attr(object, "call")
     ), 
     class = "summary.chadResults"
@@ -57,7 +57,7 @@ summary.chadResults <- function(object, ...){
 
 #' @export
 print.summary.chadResults <- function(x,...){
-  msg <-sprintf("%d tests of %d passed in < %d minutes", x$x, x$n, x$time)
+  msg <-sprintf("%d tests of %d passed in < %d %s", x$x, x$n, x$time, attr(x$time, 'units'))
 
   
   cat("Call:",   

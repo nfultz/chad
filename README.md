@@ -46,7 +46,7 @@ Chad scripts are basically R output from the console. Here is `anova.chad`:
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 When we run it with `chad('anova.chad')`, ir reruns the code and generates any output. If any of
-it had changed, it would display it:
+it had changed, it would display it in standard diff notation:
 
     > chad('inst/tests/chad/sleep.chad')
     Chadding	sleep.chad	...	
